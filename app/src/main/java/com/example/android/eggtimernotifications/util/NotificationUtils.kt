@@ -65,7 +65,7 @@ fun NotificationManager.sendNotification(messageBody: String, applicationContext
 
     // TODO: Step 1.2 get an instance of NotificationCompat.Builder
     val builder=NotificationCompat.Builder(applicationContext,
-        R.string.egg_notification_channel_id.toString())
+        applicationContext.getString(R.string.egg_notification_channel_id))
 
     // TODO: Step 1.8 use the new 'breakfast' notification channel
 
@@ -90,7 +90,7 @@ fun NotificationManager.sendNotification(messageBody: String, applicationContext
         )
 
         // TODO: Step 2.5 set priority
-
+        .setPriority(NotificationCompat.PRIORITY_HIGH)
     // TODO: Step 1.4 call notify
     notify(NOTIFICATION_ID,builder.build())
 }
