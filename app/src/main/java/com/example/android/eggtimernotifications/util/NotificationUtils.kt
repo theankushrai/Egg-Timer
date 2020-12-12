@@ -45,14 +45,14 @@ fun NotificationManager.sendNotification(messageBody: String, applicationContext
 
     // TODO: Step 1.2 get an instance of NotificationCompat.Builder
     val builder=NotificationCompat.Builder(applicationContext,
-        applicationContext.getString(R.string.egg_notification_channel_id))
+        R.string.egg_notification_channel_id.toString())
 
     // TODO: Step 1.8 use the new 'breakfast' notification channel
 
     // TODO: Step 1.3 set title, text and icon to builder
         .setSmallIcon(R.drawable.cooked_egg)
-        .setContentTitle(R.string.notification_title.toString())
-        .setContentText(R.string.notification_text.toString())
+        .setContentTitle(applicationContext.getString(R.string.notification_title))
+        .setContentText(applicationContext.getString(R.string.notification_text))
 
     // TODO: Step 1.13 set content intent
 
