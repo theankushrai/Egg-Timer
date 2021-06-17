@@ -2,8 +2,8 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/.idea/modules/android-kotlin-notifications-start.iml" filepath="$PROJECT_DIR$/.idea/modules/android-kotlin-notifications-start.iml" />
-      <module fileurl="file://$PROJECT_DIR$/.idea/modules/app/android-kotlin-notifications-start.app.iml" filepath="$PROJECT_DIR$/.idea/modules/app/android-kotlin-notifications-start.app.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/Egg-Timer.iml" filepath="$PROJECT_DIR$/.idea/modules/Egg-Timer.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/app/Egg-Timer.app.iml" filepath="$PROJECT_DIR$/.idea/modules/app/Egg-Timer.app.iml" />
     </modules>
   </component>
 </project>
