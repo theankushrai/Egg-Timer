@@ -31,7 +31,7 @@ private val NOTIFICATION_ID = 0
 private val REQUEST_CODE = 0
 private val FLAGS = 0
 
-// TODO: Step 1.1 extension function to send messages (GIVEN)
+
 /**
  * Builds and delivers the notification.
  *
@@ -40,12 +40,12 @@ private val FLAGS = 0
 fun NotificationManager.sendNotification(messageBody: String, applicationContext: Context) {
     // Create the content intent for the notification, which launches
     // this activity
-    // TODO: Step 1.11 create intent
+
     val contentIntent=Intent(applicationContext,MainActivity::class.java)
-    // TODO: Step 1.12 create PendingIntent
+    //  create PendingIntent
     val pendingIntent=PendingIntent.getActivity(applicationContext, NOTIFICATION_ID,
                                     contentIntent,PendingIntent.FLAG_UPDATE_CURRENT)
-    // TODO: Step 2.0 add style
+    //  Step 2.0 add style
     val eggImage=BitmapFactory.decodeResource(
         applicationContext.resources,
         R.drawable.cooked_egg
@@ -54,7 +54,7 @@ fun NotificationManager.sendNotification(messageBody: String, applicationContext
         .bigPicture(eggImage)
         .bigLargeIcon(null)
 
-    // TODO: Step 2.2 add snooze action
+    // add snooze action
     val snoozeIntent=Intent(applicationContext,SnoozeReceiver::class.java)
     val snoozePenndingIntent:PendingIntent=PendingIntent.getBroadcast(
         applicationContext,
@@ -63,40 +63,40 @@ fun NotificationManager.sendNotification(messageBody: String, applicationContext
         FLAGS
     )
 
-    // TODO: Step 1.2 get an instance of NotificationCompat.Builder
+    // get an instance of NotificationCompat.Builder
     val builder=NotificationCompat.Builder(applicationContext,
         applicationContext.getString(R.string.egg_notification_channel_id))
 
-    // TODO: Step 1.8 use the new 'breakfast' notification channel
+        //use the new 'breakfast' notification channel
 
-    // TODO: Step 1.3 set title, text and icon to builder
+        //  set title, text and icon to builder
         .setSmallIcon(R.drawable.cooked_egg)
         .setContentTitle(applicationContext.getString(R.string.notification_title))
         .setContentText(applicationContext.getString(R.string.notification_text))
 
-    // TODO: Step 1.13 set content intent
+        //  set content intent
         .setContentIntent(pendingIntent)
         .setAutoCancel(true)
 
-        // TODO: Step 2.1 add style to builder
+        //  add style to builder
         .setStyle(bigPicture)
         .setLargeIcon(eggImage)
 
-        // TODO: Step 2.3 add snooze action
+        // add snooze action
         .addAction(
             R.drawable.egg_icon,
             applicationContext.getString(R.string.snooze),
             snoozePenndingIntent
         )
 
-        // TODO: Step 2.5 set priority
+        //  set priority
         .setPriority(NotificationCompat.PRIORITY_HIGH)
 
-    // TODO: Step 1.4 call notify
+    //  call notify
     notify(NOTIFICATION_ID,builder.build())
 }
 
-// TODO: Step 1.14 Cancel all notifications
+//  Cancel all notifications
 fun NotificationManager.CancelNotifications(){
     cancelAll()
 }
